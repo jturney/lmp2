@@ -1,0 +1,42 @@
+# The configure script
+configure
+
+# configure scratch location
+autom4te.cache
+
+# QtCreator project files
+*.config
+*.creator*
+*.files
+*.includes
+
+# Files resulting from compilation
+*.o
+*.a
+*.so
+*.d
+
+# Compiled Python files. Regenerated automatically
+*.pyc
+
+# Files resulting from running PSI4
+output.dat
+*.32
+*.timer.dat
+
+# Compilation directories that people use
+objdir
+obj*
+obj
+objdir_clang_debug
+objdir_gcc_debug
+debug
+debug_latest
+
+# Other random files people have added.
+svn_source
+psi4.xcodeproj
+do-configure*
+update_debug_latest.sh
+
+psi.clean

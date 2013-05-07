@@ -1,0 +1,28 @@
+molecule {
+symmetry c1
+O
+H 1 R
+H 1 R 2 A
+
+R = 1.0
+A = 104.5
+}
+
+set {
+  wfn ccsd
+  local_weakp mp2
+  local true
+  basis cc-pvdz
+  scf_type pk
+  freeze_core true
+  pair_energies_print true
+}
+
+plugin_load("/home/cluster/jturney/lmp2/local/local.so")
+plugin_load("/home/cluster/jturney/lmp2/lmp2.so")
+
+energy('scf')
+
+plugin("/home/cluster/jturney/lmp2/local/local.so")
+plugin("/home/cluster/jturney/lmp2/lmp2.so")
+

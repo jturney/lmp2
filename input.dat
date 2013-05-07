@@ -1,0 +1,27 @@
+molecule {
+symmetry c1
+O
+H 1 R
+H 1 R 2 A
+
+R = 1.0
+A = 104.5
+}
+
+plugin_load("./lmp2.so")
+plugin_load("./local/local.so")
+
+set {
+  basis cc-pvdz
+  scf_type pk
+  freeze_core true
+}
+
+set lmp2 {
+  print 1
+}
+
+energy('scf')
+plugin("./local/local.so")
+molden("water.molden")
+plugin("./lmp2.so")
